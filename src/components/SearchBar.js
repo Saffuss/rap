@@ -1,9 +1,10 @@
 import React from "react";
+import '../App.css';
 
 function SearchBar() {
     return (
         <div>
-            <h3>SearchBar</h3>
+            <input placeholder="Search..."/>
         </div>
     )
 }

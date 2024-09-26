@@ -1,9 +1,10 @@
 import React from "react";
+import '../App.css';
 
-function Filters() {
+function Filters({ filters }) {
     return (
         <div>
-            <h3>Filters</h3>
+            {filters.map(filter => <button>{filter}</button>)}
         </div>
     )
 }

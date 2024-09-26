@@ -1,13 +1,13 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import Filters from "./Filters";
+import '../App.css';
 
-function Search() {
+function Search(props) {
     return (
         <div>
-            <h2>Search</h2>
             <SearchBar />
-            <Filters />
+            <Filters filters={props.filters}/>
         </div>
     )
 }
