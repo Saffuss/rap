@@ -4,7 +4,7 @@ import '../App.css';
 function Filters({ filters }) {
     return (
         <div>
-            {filters.map(filter => <button>{filter}</button>)}
+            {filters.map((filter, index) => <button key={index}>{filter}</button>)}
         </div>
     )
 }

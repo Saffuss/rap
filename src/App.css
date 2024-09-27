@@ -55,23 +55,11 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-img {
-  border: 1px solid black;
-}
-
 /* popup */
 
-.pop-up-false {
-  display: none;
-}
-
-.pop-up-true {
-  display: flex;
-}
-
 .pop-up {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
@@ -82,4 +70,8 @@ img {
   z-index: 100000;
   height: 90%;
   width: 90%;
+}
+
+.pop-up > img {
+  width: 100%;
 }
