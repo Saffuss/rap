@@ -20,7 +20,6 @@ p {
   color: white;
 }
 
-
 /* header */
 
 .header {
@@ -89,10 +88,9 @@ p {
   top: 50%;
   left: 50%;
   z-index: 100000;
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   overflow-y: scroll;
-  border-radius: 10%;
 }
 
 .pop-up > img {
