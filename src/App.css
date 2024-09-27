@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: black;
+}
+
+h1, h2, h3 {
+  color: white;
 }
 
 /* header */
@@ -52,4 +57,29 @@
 
 img {
   border: 1px solid black;
+}
+
+/* popup */
+
+.pop-up-false {
+  display: none;
+}
+
+.pop-up-true {
+  display: flex;
+}
+
+.pop-up {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 100000;
+  height: 90%;
+  width: 90%;
 }
