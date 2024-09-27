@@ -1,9 +1,22 @@
+/* universal styles */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
 .App {
   text-align: center;
   background-color: black;
 }
 
 h1, h2, h3 {
+  color: white;
+}
+
+p {
   color: white;
 }
 
@@ -19,6 +32,7 @@ h1, h2, h3 {
   font-size: calc(1px + 2vmin);
   color: white;
 }
+
 /* filter */
 
 .activeFilter {
