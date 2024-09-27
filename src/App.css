@@ -19,6 +19,12 @@ h1, h2, h3 {
   font-size: calc(1px + 2vmin);
   color: white;
 }
+/* filter */
+
+.activeFilter {
+  background-color: blue;
+  color: white;
+}
 
 /* gallery */
 
