@@ -17,9 +17,25 @@
 
 /* gallery */
 
-.images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+@media (min-width: 1025px) {
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .images {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 .image-wrapper {
