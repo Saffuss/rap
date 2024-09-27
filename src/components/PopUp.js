@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { show, close } from "../store/store";
+import { close } from "../store/store";
 import Comments from "./Comments";
 
 function PopUp() {
@@ -11,9 +11,11 @@ function PopUp() {
     if (showPopUp) {
         return (
             <div className='pop-up' onClick={() => dispatch(close())}>
-                <img src={popUp}/>
-                <h2>PopUp</h2>
-                <Comments />
+                <img alt="space" src={popUp}/>
+                <div className="pop-up-content">
+                    <h2>Image Title</h2>
+                    <Comments />
+                </div>
             </div>
         )
     } else {
