@@ -20,9 +20,7 @@ function PopUp() {
                     <button onClick={closePopUp}>X</button>
                 </div>
                 <img alt="space" src={popUp}/>
-                <div className="pop-up-content">
                     <Comments />
-                </div>
             </div>
         )
     } else {

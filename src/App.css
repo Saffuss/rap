@@ -1,5 +1,9 @@
 /* universal styles */
 
+/* * {
+  border: 1px solid white;
+} */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -119,13 +123,7 @@ button {
   width: 100%;
 }
 
-.pop-up-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pop-up-content > *, .pop-up-content > * > * {
+.commens > *, .comments > * > * {
   margin: 0;
 }
 
@@ -133,6 +131,7 @@ button {
 
 .comments {
   text-align: left;
+  width: 95%;
 }
 
 .comments > h3 {
