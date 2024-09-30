@@ -1,5 +1,4 @@
 import './App.css';
-import { useState } from 'react';
 import Header from './components/Header';
 import Search from './components/Search';
 import Gallery from './components/Gallery';

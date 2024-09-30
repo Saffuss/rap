@@ -8,12 +8,19 @@ function PopUp() {
     const popUp = useSelector(state => state.popUp.view);
     const showPopUp = popUp === 'none' ? false : true;
 
+    function closePopUp() {
+        dispatch(close());
+    }
+
     if (showPopUp) {
         return (
-            <div className='pop-up' onClick={() => dispatch(close())}>
+            <div className='pop-up'>
+                <div className="pop-up-top">
+                    <h2 className="image-title">Image Title</h2>
+                    <button onClick={closePopUp}>X</button>
+                </div>
                 <img alt="space" src={popUp}/>
                 <div className="pop-up-content">
-                    <h2>Image Title</h2>
                     <Comments />
                 </div>
             </div>

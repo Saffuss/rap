@@ -20,6 +20,13 @@ p {
   color: white;
 }
 
+button {
+  background-color: #282c34;
+  color: white;
+  border-radius: 5px;
+  margin: 1px;
+}
+
 /* header */
 
 .header {
@@ -91,6 +98,21 @@ p {
   height: 95%;
   width: 95%;
   overflow-y: scroll;
+}
+
+.pop-up-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+}
+
+.pop-up-top > button {
+  font-size: larger;
+}
+
+.image-title {
+  margin: 10px;
 }
 
 .pop-up > img {
