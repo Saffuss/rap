@@ -13,6 +13,7 @@ function Gallery() {
 
     // images declarations
     const imagesStatus = useSelector(state => state.images.status);
+    const errorMessage = useSelector(state => state.images.error)
 
     useEffect(() => {
         if (imagesStatus === 'idle') {
@@ -20,29 +21,49 @@ function Gallery() {
         }
     }, [imagesStatus, dispatch]);
 
-    const imageObjects = useSelector(state => state.images.items);
+    const imageObjects = useSelector(state => state.images.items || []);
     const images = imageObjects.map(img => img.imageUrl);
 
-    let filteredImages
+    let filteredImages;
     if (query === '') {
         filteredImages = images;
     } else {
         filteredImages = images.filter(image => image.toLowerCase().includes(query.toLowerCase()))
     }
 
-    return (
-        <div>
-            <h2>Gallery</h2>
-            <div className="images">
-                {filteredImages.map((image, index) => 
-                <div onClick={() => dispatch(show(image))} key={index} className="image-wrapper">
-                    <img src={image} alt="Space"/>
+    if (imagesStatus === 'idle') {
+        return <p>No data to display.</p>
+    } else if (imagesStatus === 'pending') {
+        return (
+            <div>
+                <h2>Loading...</h2>
+                <div className="image-wrapper">
+                    <img src={images[0]} alt="Spaceman loading placeholder"/>
                 </div>
-                )}
             </div>
-            {filteredImages.length < 1 ? (<p>No images matched your search</p>) : null}
-        </div>
-    )
+        )
+    } else if (imagesStatus === 'succeeded') {
+        return (
+            <div>
+                <h2>Gallery</h2>
+                <div className="images">
+                    {filteredImages.map((image, index) => 
+                    <div onClick={() => dispatch(show(image))} key={index} className="image-wrapper">
+                        <img src={image} alt="Space"/>
+                    </div>
+                    )}
+                </div>
+                {filteredImages.length < 1 ? (<p>No images matched your search</p>) : null}
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <h2>There was an error loading the images. Please refresh the page and try again.</h2>
+                <p>Error: {errorMessage}</p>
+            </div>
+        )
+    }
 }
 
 export default Gallery;

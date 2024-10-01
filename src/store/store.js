@@ -9,7 +9,7 @@ const fetchImages = createAsyncThunk('images/fetchImages', async () => {
 const imagesSlice = createSlice({
     name: 'images',
     initialState: {
-        items: [],
+        items: [{id: 0, imageUrl: 'https://i.pinimg.com/736x/a6/60/02/a6600229a75edcf160643dcf32531cd4.jpg'}],
         status: 'idle',
         error: null
     },
@@ -17,7 +17,7 @@ const imagesSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchImages.pending, (state) => {
-                state.status = 'loading';
+                state.status = 'pending';
             })
             .addCase(fetchImages.fulfilled, (state, action) => {
                 state.status = 'succeeded';
