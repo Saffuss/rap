@@ -3,11 +3,11 @@ import SearchBar from "./SearchBar";
 import Filters from "./Filters";
 import '../App.css';
 
-function Search(props) {
+function Search() {
     return (
         <div>
             <SearchBar />
-            <Filters filters={props.filters}/>
+            <Filters />
         </div>
     )
 }

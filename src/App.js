@@ -5,12 +5,10 @@ import Gallery from './components/Gallery';
 import PopUp from './components/PopUp';
 
 function App() {
-  const filters = ['a', 'b', 'c', 'd', 'e', 'f'];
-
   return (
     <div className="App">
       <Header />
-      <Search filters={filters} />
+      <Search />
       <Gallery />
       <PopUp />
     </div>

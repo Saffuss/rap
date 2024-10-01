@@ -3,7 +3,8 @@ import '../App.css';
 import { useSelector, useDispatch } from "react-redux";
 import { createFilter, clearAll } from "../store/store";
 
-function Filters({ filters }) {
+function Filters() {
+    const filters = ['a', 'b', 'c', 'd', 'e', 'f'];
     const dispatch = useDispatch();
     const currentFilter = useSelector(state => state.filter.filter);
 
