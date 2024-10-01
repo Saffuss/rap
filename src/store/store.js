@@ -1,4 +1,34 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+const fetchImages = createAsyncThunk('images/fetchImages', async () => {
+    const response = await fetch('http://localhost:5000/images');
+    const data = await response.json();
+    return data;
+})
+
+const imagesSlice = createSlice({
+    name: 'images',
+    initialState: {
+        items: [],
+        status: 'idle',
+        error: null
+    },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchImages.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(fetchImages.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.items = action.payload;
+            })
+            .addCase(fetchImages.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            })
+    }
+})
 
 const popUpSlice = createSlice({
     name: 'popUp',
@@ -40,6 +70,7 @@ const filterSlice = createSlice({
 // create store
 const store = configureStore({
     reducer: {
+        images: imagesSlice.reducer,
         popUp: popUpSlice.reducer,
         filter: filterSlice.reducer
     }
@@ -51,6 +82,7 @@ store.subscribe(() => {
 })
 
 //export statements
+export { fetchImages };
 export const { show, close } = popUpSlice.actions;
 export const { createFilter, createQuery, clearAll } = filterSlice.actions;
 export default store;

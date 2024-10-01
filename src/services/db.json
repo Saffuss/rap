@@ -1,10 +1,10 @@
 {
     "images": [
-        {"id": 1, "image": "https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?cs=srgb&dl=pexels-krisof-1252890.jpg&fm=jpg"},
-        {"id": 2, "image": "https://wallpapers.com/images/featured/space-sjryfre8k8f6i3ge.jpg"},
-        {"id": 3, "image": "https://img.freepik.com/free-photo/glowing-sky-sphere-orbits-starry-galaxy-generated-by-ai_188544-15599.jpg"},
-        {"id": 4, "image": "https://t3.ftcdn.net/jpg/05/69/72/02/360_F_569720237_58rhoQoMjxyB0QCeXQK0OVUA0qNogTmq.jpg"},
-        {"id": 5, "image": "https://t3.ftcdn.net/jpg/05/58/61/32/360_F_558613274_Z1zbjnHZKjpnTvvsjfZzYXk2TIeUl54a.jpg"},
-        {"id": 6, "image": "https://previews.123rf.com/images/junhoushou/junhoushou2304/junhoushou230401479/203474770-astronaut-in-outer-space-colorful-illustration-with-space-theme.jpg"}
+        {"id": 1, "imageUrl": "https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?cs=srgb&dl=pexels-krisof-1252890.jpg&fm=jpg"},
+        {"id": 2, "imageUrl": "https://wallpapers.com/images/featured/space-sjryfre8k8f6i3ge.jpg"},
+        {"id": 3, "imageUrl": "https://img.freepik.com/free-photo/glowing-sky-sphere-orbits-starry-galaxy-generated-by-ai_188544-15599.jpg"},
+        {"id": 4, "imageUrl": "https://t3.ftcdn.net/jpg/05/69/72/02/360_F_569720237_58rhoQoMjxyB0QCeXQK0OVUA0qNogTmq.jpg"},
+        {"id": 5, "imageUrl": "https://t3.ftcdn.net/jpg/05/58/61/32/360_F_558613274_Z1zbjnHZKjpnTvvsjfZzYXk2TIeUl54a.jpg"},
+        {"id": 6, "imageUrl": "https://previews.123rf.com/images/junhoushou/junhoushou2304/junhoushou230401479/203474770-astronaut-in-outer-space-colorful-illustration-with-space-theme.jpg"}
     ]
 }

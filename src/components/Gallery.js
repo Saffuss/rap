@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import '../App.css';
 import { useSelector, useDispatch } from "react-redux";
-import { show } from "../store/store";
+import { show, fetchImages } from "../store/store";
 
-function Gallery({ images }) {
+function Gallery() {
     const dispatch = useDispatch();
+
+    // filter declarations
     const search = useSelector(state => state.filter.query);
     const filters = useSelector(state => state.filter.filter);
-
     const query = search + filters;
+
+    // images declarations
+    const imagesStatus = useSelector(state => state.images.status);
+
+    useEffect(() => {
+        if (imagesStatus === 'idle') {
+            dispatch(fetchImages());
+        }
+    }, [imagesStatus, dispatch]);
+
+    const imageObjects = useSelector(state => state.images.items);
+    const images = imageObjects.map(img => img.imageUrl);
 
     let filteredImages
     if (query === '') {
