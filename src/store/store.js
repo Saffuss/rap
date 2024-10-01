@@ -1,15 +1,17 @@
 import { configureStore, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const fetchImages = createAsyncThunk('images/fetchImages', async () => {
-    const response = await fetch('http://localhost:5000/images');
+    const response = await fetch('http://localhost:5000/data');
     const data = await response.json();
-    return data;
+    const images = data.children.map(child => ({title: child.data.title}));
+    console.log(images);
+    return images;
 })
 
 const imagesSlice = createSlice({
     name: 'images',
     initialState: {
-        items: [{id: 0, imageUrl: 'https://i.pinimg.com/736x/a6/60/02/a6600229a75edcf160643dcf32531cd4.jpg'}],
+        items: {0: {id: 0, imageUrl: 'https://i.pinimg.com/736x/a6/60/02/a6600229a75edcf160643dcf32531cd4.jpg'}},
         status: 'idle',
         error: null
     },

@@ -21,14 +21,14 @@ function Gallery() {
         }
     }, [imagesStatus, dispatch]);
 
-    const imageObjects = useSelector(state => state.images.items || []);
-    const images = imageObjects.map(img => img.imageUrl);
+    /*const images = Object.values(useSelector(state => state.images.items || []));
+    const imags = images.map(img => img.imageUrl);
 
     let filteredImages;
     if (query === '') {
         filteredImages = images;
     } else {
-        filteredImages = images.filter(image => image.toLowerCase().includes(query.toLowerCase()))
+        filteredImages = images.filter(image => image.imageUrl.toLowerCase().includes(query.toLowerCase()))
     }
 
     if (imagesStatus === 'idle') {
@@ -49,7 +49,7 @@ function Gallery() {
                 <div className="images">
                     {filteredImages.map((image, index) => 
                     <div onClick={() => dispatch(show(image))} key={index} className="image-wrapper">
-                        <img src={image} alt="Space"/>
+                        <img src={image.imageUrl} alt="Space"/>
                     </div>
                     )}
                 </div>
@@ -63,7 +63,7 @@ function Gallery() {
                 <p>Error: {errorMessage}</p>
             </div>
         )
-    }
+    }*/
 }
 
 export default Gallery;

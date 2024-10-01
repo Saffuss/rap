@@ -19,7 +19,7 @@ function PopUp() {
                     <h2 className="image-title">Image Title</h2>
                     <button onClick={closePopUp}>X</button>
                 </div>
-                <img alt="space" src={popUp}/>
+                <img alt="space" src={popUp.imageUrl}/>
                     <Comments />
             </div>
         )
