@@ -16,7 +16,7 @@ function PopUp() {
         return (
             <div className='pop-up'>
                 <div className="pop-up-top">
-                    <h2 className="image-title">Image Title</h2>
+                    <h2 className="image-title">{popUp.title}</h2>
                     <button onClick={closePopUp}>X</button>
                 </div>
                 <img alt="space" src={popUp.imageUrl}/>

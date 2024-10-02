@@ -21,14 +21,14 @@ function Gallery() {
         }
     }, [imagesStatus, dispatch]);
 
-    /*const images = Object.values(useSelector(state => state.images.items || []));
+    const images = Object.values(useSelector(state => state.images.items || []));
     const imags = images.map(img => img.imageUrl);
 
     let filteredImages;
     if (query === '') {
         filteredImages = images;
     } else {
-        filteredImages = images.filter(image => image.imageUrl.toLowerCase().includes(query.toLowerCase()))
+        filteredImages = images.filter(image => (image.title + image.imageUrl).toLowerCase().includes(query.toLowerCase()))
     }
 
     if (imagesStatus === 'idle') {
@@ -63,7 +63,7 @@ function Gallery() {
                 <p>Error: {errorMessage}</p>
             </div>
         )
-    }*/
+    }
 }
 
 export default Gallery;
