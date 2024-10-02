@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { close } from "../store/store";
 import Comments from "./Comments";
+import { fetchComments } from "../store/store";
 
 function PopUp() {
     const dispatch = useDispatch();
@@ -13,6 +14,8 @@ function PopUp() {
     }
 
     if (showPopUp) {
+        //dispatch(fetchComments());
+        console.log(popUp.permalink);
         return (
             <div className='pop-up'>
                 <div className="pop-up-top">

@@ -1,22 +1,31 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchComments } from "../store/store";
 
 function Comments() {
-  /*const currentImage = useSelector(state => state.popUp.view);
+  const dispatch = useDispatch();
+  const currentImage = useSelector(state => state.popUp.view);
+  const commentsStatus = useSelector(state => state.popUp.commentsStatus)
   console.log(currentImage);
-  const imageObjects = useSelector(state => state.images.items);
+  useEffect(() => {
+    if (!currentImage.comments) {
+      dispatch(fetchComments());
+    }
+  }, [dispatch, currentImage]);
+  
   const comments = currentImage.comments;
-  console.log(comments);
 
-      function getCommentsWithReplies({ comment, replies = [] }, level = 1) {
+      function getCommentsWithReplies(comment, level = 1) {
+        const replies = comment.data.replies;
+
+        const maxIndent = 200;
         return (
-            <div style={{marginLeft: `${level * 20}px`}}>
+            <div style={{marginLeft: `${10 * level}px`}}>
                 {level === 1 ? <br/> : null}
-                <p className="comment">-{comment}</p>
-                {console.log(comment)}
+                <p className="comment">-{comment.data.body}</p>
 
-                {replies.length > 0 && replies.map((reply, index) => (
-                    <div className="reply" key={index}>
+                {typeof replies === 'object' && replies.data.children.map((reply, index) => (
+                    <div className="reply" key={reply.data.id}>
                         {getCommentsWithReplies(reply, level + 1)}
                     </div>
                 ))}
@@ -24,12 +33,21 @@ function Comments() {
         )
       }
 
-    return (
-        <div className="comments">
-            {<h3>Comments</h3>}
-            {comments.map(comment => getCommentsWithReplies(comment))}
-        </div>
-    )*/
+    if (commentsStatus === 'idle') {
+      return <h3>Please refresh the page to load comments.</h3>
+    } else if (commentsStatus === 'pending') {
+      return <h3>Comments are loading. Please wait...</h3>
+    } else if (commentsStatus === 'succeeded') {
+        return (
+          <div className="comments">
+              <h3>Comments</h3>
+              {comments && comments.length > 0 ? comments.map(comment => getCommentsWithReplies(comment)) : <p>No comments to display.</p>}
+          </div>
+      )
+    } else {
+      return <h3>There was an error while loading. Please refresh the page and try again.</h3>
+    }
+    
 }
 
 export default Comments;

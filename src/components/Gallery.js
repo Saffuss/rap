@@ -12,8 +12,8 @@ function Gallery() {
     const query = search + filters;
 
     // images declarations
-    const imagesStatus = useSelector(state => state.images.status);
-    const errorMessage = useSelector(state => state.images.error)
+    const imagesStatus = useSelector(state => state.images.imagesStatus);
+    const errorMessage = useSelector(state => state.images.imagesError)
 
     useEffect(() => {
         if (imagesStatus === 'idle') {
