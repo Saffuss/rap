@@ -1,9 +1,9 @@
 import { configureStore, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const fetchImages = createAsyncThunk('images/fetchImages', async () => {
-    const response = await fetch('http://localhost:5000/data');
+    const response = await fetch('https://www.reddit.com/r/spaceporn.json');
     const data = await response.json();
-    const images = data.children.reduce((acc, child) => {
+    const images = data.data.children.reduce((acc, child) => {
         acc[child.data.id] = {title: child.data.title, id: child.data.id, imageUrl: child.data.url_overridden_by_dest}
         return acc;
     }, {});

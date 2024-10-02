@@ -22,7 +22,6 @@ function Gallery() {
     }, [imagesStatus, dispatch]);
 
     const images = Object.values(useSelector(state => state.images.items || []));
-    const imags = images.map(img => img.imageUrl);
 
     let filteredImages;
     if (query === '') {
@@ -38,7 +37,7 @@ function Gallery() {
             <div>
                 <h2>Loading...</h2>
                 <div className="image-wrapper">
-                    <img src={images[0]} alt="Spaceman loading placeholder"/>
+                    <img src={images[0].imageUrl} alt="Spaceman loading placeholder"/>
                 </div>
             </div>
         )
