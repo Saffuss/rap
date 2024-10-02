@@ -11,6 +11,7 @@ function App() {
       <Search />
       <Gallery />
       <PopUp />
+      <a href='https://www.reddit.com/r/spaceporn'>View full Reddit website here.</a>
     </div>
   );
 }
