@@ -18,7 +18,6 @@ function Comments() {
       function getCommentsWithReplies(comment, level = 1) {
         const replies = comment.data.replies;
 
-        const maxIndent = 200;
         return (
             <div style={{marginLeft: `${10 * level}px`}}>
                 {level === 1 ? <br/> : null}

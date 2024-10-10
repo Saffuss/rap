@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { close } from "../store/store";
 import Comments from "./Comments";
-import { fetchComments } from "../store/store";
 
 function PopUp() {
     const dispatch = useDispatch();
@@ -14,13 +13,12 @@ function PopUp() {
     }
 
     if (showPopUp) {
-        //dispatch(fetchComments());
         console.log(popUp.permalink);
         return (
             <div className='pop-up'>
                 <div className="pop-up-top">
                     <h2 className="image-title">{popUp.title}</h2>
-                    <button onClick={closePopUp}>X</button>
+                    <button onClick={closePopUp} className="close-button">X</button>
                 </div>
                 <img alt="space" src={popUp.imageUrl}/>
                     <Comments />
