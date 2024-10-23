@@ -88,6 +88,11 @@ a {
   width: 90%;
   height: 90%;
   object-fit: cover;
+  transition: transform 0.1s ease;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.1);
 }
 
 /* popup */
@@ -117,6 +122,11 @@ a {
 
 .pop-up-top > button {
   font-size: larger;
+  transition: transform 0.2s ease;
+}
+
+.pop-up-top > button:hover {
+  transform: scale(1.4);
 }
 
 .image-title {
@@ -146,4 +156,24 @@ a {
 
 .comment {
   margin-top: 0;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: '';
+  }
+  33% {
+    content: '.';
+  }
+  66% {
+    content: '..'
+  }
+  100% {
+    content: '...'
+  }
 }

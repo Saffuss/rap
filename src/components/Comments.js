@@ -35,7 +35,7 @@ function Comments() {
     if (commentsStatus === 'idle') {
       return <h3>Please refresh the page to load comments.</h3>
     } else if (commentsStatus === 'pending') {
-      return <h3>Comments are loading. Please wait...</h3>
+      return <h3 className="loading-dots">Comments are loading. Please wait</h3>
     } else if (commentsStatus === 'succeeded') {
         return (
           <div className="comments">
