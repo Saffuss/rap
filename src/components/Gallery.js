@@ -48,7 +48,7 @@ function Gallery() {
                 <div className="images">
                     {filteredImages.map((image, index) => 
                     <div onClick={() => dispatch(show(image))} key={index} className="image-wrapper">
-                        <img src={image.imageUrl} alt="Space"/>
+                        <img src={image.imageUrl} className="jim" alt="Space"/>
                     </div>
                     )}
                 </div>
