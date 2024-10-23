@@ -138,7 +138,6 @@ a {
   flex-direction: column;
   text-align: left;
   width: 95%;
-  flex-wrap: wrap-reverse;
 }
 
 .comments > h3 {
