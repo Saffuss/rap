@@ -31,7 +31,13 @@ function Gallery() {
     }
 
     if (imagesStatus === 'idle') {
-        return <p>No data to display.</p>
+        return (
+            <div>
+                <p>No data to display.</p>
+                <button onClick={() => window.location.reload()}>Reload page</button>
+            </div>
+        )
+        
     } else if (imagesStatus === 'pending') {
         return (
             <div>
@@ -60,6 +66,7 @@ function Gallery() {
             <div>
                 <h2>There was an error loading the images. Please refresh the page and try again.</h2>
                 <p>Error: {errorMessage}</p>
+                <button onClick={() => window.location.reload()}>Reload page</button>
             </div>
         )
     }
