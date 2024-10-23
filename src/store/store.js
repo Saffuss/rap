@@ -60,7 +60,10 @@ const imagesSlice = createSlice({
 const popUpSlice = createSlice({
     name: 'popUp',
     initialState: {
-        view: 'none',
+        view: {
+            permalink: null,
+            comments: []
+        },
         commentsStatus: 'idle',
         commentsError: null
     },
@@ -69,7 +72,10 @@ const popUpSlice = createSlice({
             state.view = action.payload;
         },
         close: (state) => {
-            state.view = 'none';
+            state.view = {
+                permalink: null,
+                comments: []
+            };
         }
     },
     extraReducers: (builder) => {

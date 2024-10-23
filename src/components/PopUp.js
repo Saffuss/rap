@@ -6,7 +6,7 @@ import Comments from "./Comments";
 function PopUp() {
     const dispatch = useDispatch();
     const popUp = useSelector(state => state.popUp.view);
-    const showPopUp = popUp === 'none' ? false : true;
+    const showPopUp = popUp.permalink === null ? false : true;
 
     function closePopUp() {
         dispatch(close());
